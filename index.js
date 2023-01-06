@@ -43,8 +43,31 @@ window.onload = function createElements() {
   shuffle(bingoNumbers);
 }
 
+function showLastNumber(picked) {
+  var lastNumber = document.getElementById('actual-number')
+
+  switch (true) {
+    case picked < 16:
+      lastNumber.innerText = 'B ' + picked;
+      break;
+    case picked > 15 && picked < 31:
+      lastNumber.innerText = 'I ' + picked;
+      break;
+    case picked > 30 && picked < 46:
+      lastNumber.innerText = 'N ' + picked;
+      break;
+    case picked > 45 && picked < 61:
+      lastNumber.innerText = 'G ' + picked;
+      break;
+    case picked > 60:
+        lastNumber.innerText = 'O ' + picked;
+      break;
+  }
+}
+
 function pickNumber(){
   var pickedElement = document.getElementById(bingoNumbers[0]);
+  showLastNumber(bingoNumbers[0]);
   pickedElement.classList.add('picked');
   bingoNumbers.splice(0, 1);
 }
