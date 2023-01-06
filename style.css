@@ -44,9 +44,11 @@
 .button-container .pick-button {
   background-color: #dd3a3a;
   color: #000000;
+  font-weight: bold;
   font-size: 24px;
-  width: 150px;
+  width: 175px;
   height: 50px;
+  border: none;
 }
 .button-container .pick-button:hover {
   background-color: #c22222;
