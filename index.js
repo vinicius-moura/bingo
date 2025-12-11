@@ -66,8 +66,10 @@ function showLastNumber(picked) {
 }
 
 function pickNumber(){
-  var pickedElement = document.getElementById(bingoNumbers[0]);
-  showLastNumber(bingoNumbers[0]);
-  pickedElement.classList.add('picked');
-  bingoNumbers.splice(0, 1);
+  if (bingoNumbers.length > 0) {
+    var pickedElement = document.getElementById(bingoNumbers[0]);
+    showLastNumber(bingoNumbers[0]);
+    pickedElement.classList.add('picked');
+    bingoNumbers.splice(0, 1);
+  }
 }
