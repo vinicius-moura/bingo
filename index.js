@@ -44,31 +44,22 @@ window.onload = function createElements() {
 }
 
 function showLastNumber(picked) {
-  var lastNumber = document.getElementById('actual-number')
+  var tutorialMessage = document.getElementById('tutorial-message');
+  var lastNumber = document.getElementById('actual-number');
 
-  switch (true) {
-    case picked < 16:
-      lastNumber.innerText = 'B ' + picked;
-      break;
-    case picked > 15 && picked < 31:
-      lastNumber.innerText = 'I ' + picked;
-      break;
-    case picked > 30 && picked < 46:
-      lastNumber.innerText = 'N ' + picked;
-      break;
-    case picked > 45 && picked < 61:
-      lastNumber.innerText = 'G ' + picked;
-      break;
-    case picked > 60:
-        lastNumber.innerText = 'O ' + picked;
-      break;
-  }
+  tutorialMessage.style.display = "none";
+
+  lastNumber.innerText = picked;
+
+  lastNumber.classList.remove('active'); 
+  void lastNumber.offsetWidth;
+  lastNumber.classList.add('active');
 }
 
 function pickNumber(){
   if (bingoNumbers.length > 0) {
-    var pickedElement = document.getElementById(bingoNumbers[0]);
     showLastNumber(bingoNumbers[0]);
+    var pickedElement = document.getElementById(bingoNumbers[0]);
     pickedElement.classList.add('picked');
     bingoNumbers.splice(0, 1);
   }

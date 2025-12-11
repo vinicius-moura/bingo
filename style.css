@@ -34,10 +34,11 @@ body {
   align-items: center;
   background: radial-gradient(circle at 30% 30%, #ffffff, #7c7b7b);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  opacity: 10%;
 }
 .numbers-container .number.picked {
-  background: radial-gradient(circle at 30% 30%, #dd3a3a, rgb(194.4415584416, 33.5584415584, 33.5584415584));
-  animation: bounce2 2s ease;
+  opacity: 100%;
+  animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 .numbers-container .number p {
   font-family: sans-serif;
@@ -69,13 +70,31 @@ body {
 .number-picked {
   margin: 0 auto;
 }
-.number-picked p {
+.number-picked .tutorial-message {
   color: #ffffff;
   text-align: center;
   font-weight: bold;
   font-family: sans-serif;
   font-size: 50px;
   margin: 0;
+}
+.number-picked .actual-number {
+  height: 100px;
+  width: 100px;
+  display: none;
+  border-radius: 100px;
+  font-family: sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 30px;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #7c7b7b);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.number-picked .actual-number.active {
+  display: flex;
+  animation: bounce2 2s ease;
 }
 
 @keyframes popIn {
