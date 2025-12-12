@@ -54,17 +54,27 @@ body {
   text-align: center;
 }
 .button-container .pick-button {
+  padding: 17px 40px;
+  border-radius: 10px;
+  border: 0;
   background-color: #dd3a3a;
-  color: #ffffff;
-  font-weight: bold;
+  letter-spacing: 1.5px;
   font-size: 24px;
-  width: 175px;
-  height: 50px;
-  border: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: rgb(194.4415584416, 33.5584415584, 33.5584415584) 0px 10px 0px 0px;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
 }
 .button-container .pick-button:hover {
-  background-color: rgb(194.4415584416, 33.5584415584, 33.5584415584);
-  cursor: pointer;
+  box-shadow: rgb(194.4415584416, 33.5584415584, 33.5584415584) 0px 7px 0px 0px;
+}
+.button-container .pick-button:active {
+  background-color: #dd3a3a;
+  /*50, 168, 80*/
+  box-shadow: rgb(194.4415584416, 33.5584415584, 33.5584415584) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
 }
 
 .number-picked {

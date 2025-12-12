@@ -54,6 +54,7 @@ function showLastNumber(picked) {
   lastNumber.classList.remove('active'); 
   void lastNumber.offsetWidth;
   lastNumber.classList.add('active');
+  speakNumber(lastNumber.innerText);
 }
 
 function pickNumber(){
@@ -62,5 +63,39 @@ function pickNumber(){
     var pickedElement = document.getElementById(bingoNumbers[0]);
     pickedElement.classList.add('picked');
     bingoNumbers.splice(0, 1);
+  }
+}
+
+function speakNumber(num) {
+    if ('speechSynthesis' in window) {
+        const text = createMessage(num);
+        const texto = `${text}... Repetindo, ${text}`;
+        
+        const voice = new SpeechSynthesisUtterance(texto);
+        
+        // voice configs
+        voice.lang = 'pt-BR';
+        voice.rate = 1;
+        voice.pitch = 1;
+        voice.volume = 1;
+
+        window.speechSynthesis.speak(voice);
+    } else {
+        console.log("Seu navegador não suporta áudio.");
+    }
+}
+
+function createMessage(num) {
+  switch (true) {
+    case num < 16:
+      return 'B...' + num;
+    case num > 15 && num < 31:
+      return 'I...' + num;
+    case num > 30 && num < 46:
+      return 'N...' + num;
+    case num > 45 && num < 61:
+      return 'G...' + num;
+    case num > 60:
+      return 'O...' + num;
   }
 }

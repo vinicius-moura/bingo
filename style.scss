@@ -61,16 +61,27 @@ body {
     margin: 15px auto;
     text-align: center;
     .pick-button {
+        padding: 17px 40px;
+        border-radius: 10px;
+        border: 0;
         background-color: $sort-buton-color;
-        color: #ffffff;
-        font-weight: bold;
+        letter-spacing: 1.5px;
         font-size: 24px;
-        width: 175px;
-        height: 50px;
-        border: none;
+        font-weight: bold;
+        
+        transition: all 0.3s ease;
+        box-shadow: $sort-buton-color-hover 0px 10px 0px 0px;
+        color: hsl(0, 0%, 100%);
+        cursor: pointer;
         &:hover{
-            background-color: $sort-buton-color-hover;
-            cursor: pointer;
+            box-shadow: $sort-buton-color-hover 0px 7px 0px 0px;
+        }
+        &:active {
+             background-color: $sort-buton-color;
+            /*50, 168, 80*/
+            box-shadow: $sort-buton-color-hover 0px 0px 0px 0px;
+            transform: translateY(5px);
+            transition: 200ms;
         }
     }
 }
