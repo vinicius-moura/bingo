@@ -4,6 +4,7 @@ $sort-buton-color: #dd3a3a;
 $sort-buton-color-hover: color.adjust($sort-buton-color, $lightness: -10%);
 $numbers-size: 30px;
 $active-number-size: 100px;
+$active-number-size-mobile: 80px;
 
 
 body {
@@ -137,4 +138,46 @@ body {
 	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
 	40% {transform: translateY(-30px);}
 	60% {transform: translateY(-15px);}
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        height: fit-content;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .logo-container {
+        .logo-image {
+            width: 50%;
+        }
+    }
+
+    .numbers-container {
+        width: 95%;
+        .number {
+            margin: 4px;
+        }
+    }
+    .number-picked {
+        .tutorial-message {
+            font-size: 24px;
+            padding: 0 10px;
+        }
+        .actual-number {
+            height: $active-number-size-mobile;
+            width: $active-number-size-mobile;
+            border-radius: $active-number-size-mobile;
+            margin: 20px;
+        } 
+    }
+
+    .button-container {
+        .pick-button {
+            width: 80%;
+            padding: 15px;
+            font-size: 20px;
+        }
+    }
 }

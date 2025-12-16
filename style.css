@@ -131,5 +131,36 @@ body {
     transform: translateY(-15px);
   }
 }
+@media screen and (max-width: 768px) {
+  body {
+    height: fit-content;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .logo-container .logo-image {
+    width: 50%;
+  }
+  .numbers-container {
+    width: 95%;
+  }
+  .numbers-container .number {
+    margin: 4px;
+  }
+  .number-picked .tutorial-message {
+    font-size: 24px;
+    padding: 0 10px;
+  }
+  .number-picked .actual-number {
+    height: 80px;
+    width: 80px;
+    border-radius: 80px;
+    margin: 20px;
+  }
+  .button-container .pick-button {
+    width: 80%;
+    padding: 15px;
+    font-size: 20px;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
